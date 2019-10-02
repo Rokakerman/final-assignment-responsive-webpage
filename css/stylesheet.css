@@ -354,6 +354,31 @@ footer {
     }
 }
 
+@media screen and (max-height: 500px) {
+
+    body {
+        height: 400vh;
+    }
+    
+    .main-article {
+        max-width: 60%;
+        max-height: 80%;
+        }
+    
+    .contact-section1 {
+        grid-template-columns: 1;
+    }
+
+    .contact-section2 {
+        grid-template-columns: 1;
+    }
+    
+    .contact-main-article {
+        max-width: 60%;
+        max-height: 50%;
+    }
+}
+
 /*
     mobile css rules end here 
 */
