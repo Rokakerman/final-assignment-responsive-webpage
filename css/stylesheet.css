@@ -4,10 +4,8 @@
 
 body {
     margin: 0;
-    padding: 0;
     display: flex;
     flex-direction: column;
-    width: 100%;
     height: 200vh;
 }
 
@@ -33,7 +31,10 @@ nav {
 }
 
 ul {
+    display: flex;
+    justify-content: center;
     width: 100%;
+    margin: 0;
     padding: 0;
 }
 
@@ -41,7 +42,6 @@ li {
     display: flex;
     justify-content: space-around;
     width: 100%;
-    height: 5;
     text-decoration: none;
     list-style-type: none;
     text-align: center;
@@ -57,7 +57,7 @@ li > a {
 }
 
 a:hover {
-    text-decoration: underline;
+    color: whitesmoke;
 }
 
 
@@ -114,8 +114,8 @@ a:hover {
     height: 60%;
 }
 
-.main-section1 {
-    grid-column: 1/2;
+.contact-section1 {
+    grid-column: 1;
     grid-row: 1/2;
     display: flex;
     height: 100%;
@@ -124,8 +124,17 @@ a:hover {
     align-items: center;
 }
 
-.contact-section1 {
+.contact-section2 {
     grid-column: 1;
+    grid-row: 2/3;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;  
+}
+.main-section1 {
+    grid-column: 1/2;
     grid-row: 1/2;
     display: flex;
     height: 100%;
@@ -144,16 +153,6 @@ a:hover {
     align-items: center;
 }
 
-.contact-section2 {
-    grid-column: 1;
-    grid-row: 2/3;
-    display: flex;
-    height: 100%;
-    width: 100%;
-    justify-content: center;
-    align-items: center;  
-}
-
 /* 
     "contact-info" är en li tag där jag skrivit ut
     kontakt information i en form av en lista 
@@ -161,12 +160,12 @@ a:hover {
 
 .contact-info {
     display: flex;
-    flex-direction: column;
-    width: 100px; 
+    max-width: 80%; 
     height: 100px; 
     align-self: center;
     justify-content: center;
     margin-bottom: 20px;
+    flex-wrap: wrap-reverse;
 }
 
 .list-info {
@@ -176,8 +175,8 @@ a:hover {
     align-self: none;
     text-align: start;
     line-height: 18px;
+    margin: 5px;
 }
-
 
 .main-section3 {
     grid-column: 1/2;
@@ -204,9 +203,15 @@ a:hover {
     flex-direction: column;
     justify-content: center; 
     background: #23425f;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     max-width: 80%;
     text-align: none;
+    transition: transform 0.2s ease-in-out;
+}
+
+.main-article:hover {
+    background-color: #13293d;
+    transform: scale(1.05);
 }
 
 .contact-main-article {
@@ -214,9 +219,15 @@ a:hover {
     flex-direction: column;
     justify-content: center; 
     background: #23425f;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     max-width: 50%;
     text-align: none;
+    transition: transform 0.2s ease-in-out;
+}
+
+.contact-main-article:hover {
+    background: #13293d;
+    transform: scale(1.05);
 }
 
 .main-h2 {
@@ -277,7 +288,6 @@ footer {
     grid-column: 2/4;
     grid-row: 2/3;
     color: black;
-    position: ;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -303,6 +313,28 @@ footer {
 .email {
     margin-top: 5px;
     border-radius: 10px;
+}
+
+@media screen and (min-width: 500px) and (max-width: 599px) {
+    .main-article {
+    max-width: 60%;
+    }
+
+
+    .contact-main-article {
+    max-width: 40%;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 699px) {
+    .main-article {
+    max-width: 50%;
+    }
+
+
+    .contact-main-article {
+    max-width: 30%;
+    }
 }
 
 /*
@@ -350,15 +382,6 @@ footer {
         grid-template-columns: repeat(8, 1fr);
         grid-template-rows: repeat(3, 1fr);
     }
-    
-    .contact-header {
-        /* background: #13293d; */
-        background-image: url("../img/header.png");
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
-        grid-template-columns: repeat(8, 1fr);
-        grid-template-rows: repeat(3, 1fr);
-    }
 
     nav {
         grid-column: 3/9;
@@ -366,12 +389,6 @@ footer {
         width: 100%;
         height: 50%;
         background: #23425f;
-    }
-
-    ul {
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
     
     li {
@@ -384,7 +401,7 @@ footer {
     }
 
     a:hover {
-        color: whitesmoke;
+        text-decoration: underline;
     }
     
     .searchbar {
@@ -409,39 +426,33 @@ footer {
         main elements 
     */
     
-    .home-main {
-        background: #cfcece;
-        grid-template-columns: repeat(2 ,1fr);
-    }
-
     .contact-main {
         background: #cfcece;
         grid-template-columns: repeat(6 ,1fr);
-        grid-template-rows: repeat(2, 1fr);
+    }
+
+    .home-main {
+        background: #cfcece;
     }
 
     .contact-section1 {
         grid-column: 2/6;
-        grid-row: 1/2;
     }
 
     .contact-section2 {
         grid-column: 2/6;
-        grid-row: 2/3;
     }
 
     .main-article {
         width: 60%;
         height: 90%;
-        border-radius: 0;
     }
 
     .contact-main-article {
         width: 60%;
         height: 90%;
-        border-radius: 0;
     }
-    
+
     .main-h2 {
         font-size: 30px;
         width: 100%;
@@ -467,9 +478,17 @@ footer {
         align-self: center;
         text-align: center;
     }
+
+    .contact-info {
+        width: 100%;
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+    
     
     .image-container {
-        height: 100%;
+        height: 60%;
+        margin-top: auto;
     }   
 
     /* 
